@@ -1,0 +1,57 @@
+const OpenAI = require("openai");
+
+function generateFallbackResponse(message) {
+  if (!message) return "Привет! Чем могу помочь?";
+  const lower = message.toLowerCase();
+  if (lower.includes("тур") || lower.includes("360")) {
+    return "Виртуальные туры 360° покажут ваше заведение в лучшем свете. Звоните: +7 940 943-55-55!";
+  }
+  if (lower.includes("цена") || lower.includes("стоимость") || lower.includes("сколько")) {
+    return "У нас есть тарифы на любой бюджет: от 15,000₽. Для точной оценки напишите детали или позвоните: +7 940 766-66-44.";
+  }
+  if (lower.includes("контакт") || lower.includes("телефон") || lower.includes("адрес")) {
+    return "📍 Адрес: г. Сухум, ул. Эшба 166\n📞 Телефоны: +7 940 766-66-44, +7 940 943-55-55\n📧 Email: Service-abh@yandex.ru";
+  }
+  return "Привет! Я помощник Smart 360 🤖 Чем могу помочь? Задайте вопрос о наших услугах или оставьте контакт для связи.";
+}
+
+module.exports = async (req, res) => {
+  try {
+    if (req.method !== "POST") {
+      res.status(405).json({ message: "Method not allowed" });
+      return;
+    }
+    const { message } = req.body || {};
+    if (!message) {
+      res.status(400).json({ message: "Message is required" });
+      return;
+    }
+
+    const apiKey = process.env.OPENAI_API_KEY || process.env.VERCEL_OPENAI_API_KEY;
+    if (apiKey && apiKey !== "default_key") {
+      try {
+        const client = new OpenAI({ apiKey });
+        const prompt = `Ты - помощник агентства Smart 360. Отвечай на русском языке дружелюбно и профессионально. Вопрос пользователя: ${message}`;
+        const aiResponse = await client.chat.completions.create({
+          model: "gpt-4o",
+          messages: [{ role: "user", content: prompt }],
+          max_tokens: 300,
+          temperature: 0.7,
+        });
+        const text = aiResponse?.choices?.[0]?.message?.content || "";
+        res.json({ message: text });
+        return;
+      } catch (err) {
+        console.error("OpenAI API error:", err);
+        // fall through to fallback
+      }
+    }
+
+    // Fallback canned response
+    const response = generateFallbackResponse(message);
+    res.json({ message: response });
+  } catch (err) {
+    console.error("API error:", err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
