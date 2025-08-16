@@ -1,57 +1,55 @@
-const OpenAI = require("openai");
+// api/chat.js and api/chatbot.js - CommonJS handler for Vercel Node serverless
+const fetch = global.fetch || (await import('node-fetch')).default; // node 18+ has global fetch; fallback to node-fetch if not available
 
-function generateFallbackResponse(message) {
-  if (!message) return "Привет! Чем могу помочь?";
-  const lower = message.toLowerCase();
-  if (lower.includes("тур") || lower.includes("360")) {
-    return "Виртуальные туры 360° покажут ваше заведение в лучшем свете. Звоните: +7 940 943-55-55!";
-  }
-  if (lower.includes("цена") || lower.includes("стоимость") || lower.includes("сколько")) {
-    return "У нас есть тарифы на любой бюджет: от 15,000₽. Для точной оценки напишите детали или позвоните: +7 940 766-66-44.";
-  }
-  if (lower.includes("контакт") || lower.includes("телефон") || lower.includes("адрес")) {
-    return "📍 Адрес: г. Сухум, ул. Эшба 166\n📞 Телефоны: +7 940 766-66-44, +7 940 943-55-55\n📧 Email: Service-abh@yandex.ru";
-  }
-  return "Привет! Я помощник Smart 360 🤖 Чем могу помочь? Задайте вопрос о наших услугах или оставьте контакт для связи.";
-}
-
-module.exports = async (req, res) => {
+module.exports = async function (req, res) {
   try {
-    if (req.method !== "POST") {
-      res.status(405).json({ message: "Method not allowed" });
-      return;
-    }
-    const { message } = req.body || {};
-    if (!message) {
-      res.status(400).json({ message: "Message is required" });
-      return;
+    if (req.method !== 'POST') {
+      res.setHeader('Allow', 'POST');
+      return res.status(405).end('Method Not Allowed');
     }
 
-    const apiKey = process.env.OPENAI_API_KEY || process.env.VERCEL_OPENAI_API_KEY;
-    if (apiKey && apiKey !== "default_key") {
-      try {
-        const client = new OpenAI({ apiKey });
-        const prompt = `Ты - помощник агентства Smart 360. Отвечай на русском языке дружелюбно и профессионально. Вопрос пользователя: ${message}`;
-        const aiResponse = await client.chat.completions.create({
-          model: "gpt-4o",
-          messages: [{ role: "user", content: prompt }],
-          max_tokens: 300,
-          temperature: 0.7,
-        });
-        const text = aiResponse?.choices?.[0]?.message?.content || "";
-        res.json({ message: text });
-        return;
-      } catch (err) {
-        console.error("OpenAI API error:", err);
-        // fall through to fallback
-      }
+    let body = req.body;
+    if (!body || Object.keys(body).length === 0) {
+      // Some runtimes provide body as string
+      try { body = JSON.parse(req.body || '{}'); } catch (e) { body = req.body; }
     }
 
-    // Fallback canned response
-    const response = generateFallbackResponse(message);
-    res.json({ message: response });
+    const message = (body && body.message) ? String(body.message) : null;
+    if (!message) return res.status(400).json({ error: 'Missing message' });
+
+    const key = process.env.OPENAI_API_KEY || process.env.OPENAI_KEY;
+    if (!key) return res.status(500).json({ error: 'OpenAI API key not configured' });
+
+    const model = (body.model && String(body.model)) || process.env.DEFAULT_OPENAI_MODEL || 'gpt-3.5-turbo';
+    const temperature = typeof body.temperature === 'number' ? body.temperature : 0.7;
+
+    const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${key}`,
+      },
+      body: JSON.stringify({
+        model,
+        messages: [{ role: 'user', content: message }],
+        temperature,
+        max_tokens: 800,
+      }),
+    });
+
+    const text = await resp.text();
+    if (!resp.ok) {
+      // return OpenAI error body for debugging
+      return res.status(resp.status).json({ error: 'OpenAI error', detail: text });
+    }
+
+    let data;
+    try { data = JSON.parse(text); } catch (e) { data = { raw: text }; }
+
+    const reply = data?.choices?.[0]?.message?.content || data?.choices?.[0]?.text || null;
+    return res.status(200).json({ reply, raw: data });
   } catch (err) {
-    console.error("API error:", err);
-    res.status(500).json({ message: "Internal server error" });
+    console.error('chat handler error', err);
+    return res.status(500).json({ error: err?.message || String(err) });
   }
 };
