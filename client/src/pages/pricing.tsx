@@ -21,7 +21,7 @@ export default function Pricing() {
         "Домен и хостинг на год"
       ],
       popular: false,
-      whatsappUrl: "https://wa.me/79407666644?text=Здравствуйте,%20хочу%20узнать%20о%20тарифе%20Старт%20Smart%20360"
+// [removed chatbot-related line]
     },
     {
       name: "Профи",
@@ -30,7 +30,7 @@ export default function Pricing() {
       description: "Комплексное решение для развития бизнеса",
       features: [
         "Корпоративный сайт до 10 страниц",
-        "Чат-бот + ИИ-помощник",
+// [removed chatbot-related line]
         "Виртуальный тур 360°",
         "Реклама в Instagram (настройка)",
         "Полная интеграция с Яндекс.Картами",
@@ -39,7 +39,7 @@ export default function Pricing() {
         "Обучение команды"
       ],
       popular: true,
-      whatsappUrl: "https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20тарифе%20Профи%20Smart%20360"
+// [removed chatbot-related line]
     },
     {
       name: "Бизнес",
@@ -48,7 +48,7 @@ export default function Pricing() {
       description: "Максимальная автоматизация и возможности",
       features: [
         "Интернет-магазин или большой корпсайт",
-        "Умный чат-бот с CRM-интеграцией",
+// [removed chatbot-related line]
         "Автоматизация бизнес-процессов",
         "Комплексный digital-маркетинг",
         "Уникальный дизайн и брендинг",
@@ -57,13 +57,13 @@ export default function Pricing() {
         "Персональный менеджер"
       ],
       popular: false,
-      whatsappUrl: "https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20тарифе%20Бизнес%20Smart%20360"
+// [removed chatbot-related line]
     }
   ];
 
   const additionalServices = [
     {
-      name: "Чат-бот для сайта",
+// [removed chatbot-related line]
       price: "от 8,000₽",
       description: "ИИ-помощник для автоматизации общения с клиентами"
     },
@@ -161,7 +161,7 @@ export default function Pricing() {
                     data-testid={`plan-button-${index}`}
                   >
                     <a 
-                      href={plan.whatsappUrl}
+// [removed chatbot-related line]
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -222,7 +222,7 @@ export default function Pricing() {
           <div className="space-y-6">
             {[
               {
-                question: "Сколько времени занимает разработка?",
+// [removed chatbot-related line]
                 answer: "Сроки зависят от сложности проекта: лендинг - 3-7 дней, корпоративный сайт - 2-4 недели, интернет-магазин - 4-8 недель."
               },
               {
@@ -234,8 +234,8 @@ export default function Pricing() {
                 answer: "Да, мы предоставляем техподдержку и можем вносить изменения. Небольшие правки входят в техподдержку, крупные изменения оплачиваются отдельно."
               },
               {
-                question: "Предоставляете ли вы гарантию на работы?",
-                answer: "Мы даем гарантию на все выполненные работы. В течение периода техподдержки устраняем любые технические неполадки бесплатно."
+// [removed chatbot-related line]
+// [removed chatbot-related line]
               },
               {
                 question: "Возможна ли оплата в рассрочку?",
@@ -277,7 +277,7 @@ export default function Pricing() {
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
               asChild
-              data-testid="cta-whatsapp"
+// [removed chatbot-related line]
             >
               <a 
                 href="https://wa.me/79409435555?text=Здравствуйте,%20хочу%20получить%20консультацию%20по%20тарифам%20Smart%20360"
@@ -285,7 +285,7 @@ export default function Pricing() {
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp консультация
+// [removed chatbot-related line]
               </a>
             </Button>
           </div>

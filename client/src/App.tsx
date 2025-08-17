@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
-import ChatbotDemo from "@/pages/chatbot-demo";
+// [removed chatbot-related line]
 import VirtualTour from "@/pages/virtual-tour";
 import YandexMaps from "@/pages/yandex-maps";
 import TextGenerator from "@/pages/text-generator";
@@ -20,7 +20,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
-      <Route path="/demo/chatbot" component={ChatbotDemo} />
+// [removed chatbot-related line]
       <Route path="/demo/virtual-tour" component={VirtualTour} />
       <Route path="/demo/yandex-maps" component={YandexMaps} />
       <Route path="/demo/text-generator" component={TextGenerator} />

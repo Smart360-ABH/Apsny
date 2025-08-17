@@ -1,5 +1,5 @@
 \
-  const OpenAI = require("openai");
+// [removed chatbot-related line]
 
   function generateMockText(topic, audience, length) {
     const base = `Тема: ${topic || "не указана"}. Аудитория: ${audience || "все"}. Длина: ${length || "средняя"}.`;
@@ -16,10 +16,10 @@
         return;
       }
       const { topic, audience, length } = req.body || {};
-      const apiKey = process.env.OPENAI_API_KEY || process.env.VERCEL_OPENAI_API_KEY;
+// [removed chatbot-related line]
       if (apiKey && apiKey !== "default_key") {
         try {
-          const client = new OpenAI({ apiKey });
+// [removed chatbot-related line]
           const prompt = `Создай коммерческий текст на русском языке. Тема: ${topic}. Целевая аудитория: ${audience}. Длина: ${length}.`;
           const aiResponse = await client.chat.completions.create({
             model: "gpt-4o",
@@ -31,7 +31,7 @@
           res.json({ text });
           return;
         } catch (err) {
-          console.error("OpenAI error:", err);
+// [removed chatbot-related line]
         }
       }
       const text = generateMockText(topic, audience, length);

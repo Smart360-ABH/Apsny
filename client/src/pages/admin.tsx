@@ -108,7 +108,7 @@ export default function Admin() {
   const downloadCSV = () => {
     window.open("/api/leads/export/csv", "_blank");
     toast({
-      title: "Экспорт начат",
+// [removed chatbot-related line]
       description: "Файл CSV будет загружен",
     });
   };
@@ -346,14 +346,14 @@ export default function Admin() {
                             size="sm"
                             variant="outline"
                             asChild
-                            data-testid={`whatsapp-${lead.id}`}
+// [removed chatbot-related line]
                           >
                             <a
                               href={`https://wa.me/${lead.phone.replace(/\D/g, '')}?text=Здравствуйте,%20${lead.name}!%20Спасибо%20за%20заявку%20на%20Smart%20360.`}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              WhatsApp
+// [removed chatbot-related line]
                             </a>
                           </Button>
                         </div>

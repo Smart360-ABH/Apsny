@@ -105,8 +105,8 @@ export default function YandexMaps() {
             
             <div className="text-center p-4" data-testid="feature-3">
               <div className="text-4xl mb-3">🕒</div>
-              <h3 className="font-semibold mb-2">Часы работы</h3>
-              <p className="text-sm text-gray-600">Режим работы по дням</p>
+// [removed chatbot-related line]
+// [removed chatbot-related line]
             </div>
             
             <div className="text-center p-4" data-testid="feature-4">
@@ -162,14 +162,14 @@ export default function YandexMaps() {
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
               asChild
-              data-testid="cta-whatsapp"
+// [removed chatbot-related line]
             >
               <a 
                 href="https://wa.me/79407666644?text=Здравствуйте,%20хочу%20узнать%20об%20интеграции%20с%20Яндекс.Картами%20Smart%20360"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp консультация
+// [removed chatbot-related line]
               </a>
             </Button>
           </div>

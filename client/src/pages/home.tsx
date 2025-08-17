@@ -13,16 +13,16 @@ export default function Home() {
       title: "Создание сайтов",
       description: "Персональные и корпоративные сайты с современным дизайном и SEO-оптимизацией",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
-      imageAlt: "Разработка современных веб-сайтов",
-      whatsappUrl: "https://wa.me/79407666644?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса.",
+// [removed chatbot-related line]
+// [removed chatbot-related line]
       phoneNumber: "+7 940 766-66-44"
     },
     {
-      title: "Чат-боты и Агенты ИИ",
+// [removed chatbot-related line]
       description: "Умные помощники для автоматизации общения с клиентами и внутренних процессов",
       image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
-      imageAlt: "ИИ чат-бот для автоматизации бизнеса",
-      whatsappUrl: "https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса.",
+// [removed chatbot-related line]
+// [removed chatbot-related line]
       phoneNumber: "+7 940 943-55-55"
     },
     {
@@ -30,7 +30,7 @@ export default function Home() {
       description: "Полное заполнение профиля организации, каталоги товаров и услуг в картах",
       image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
       imageAlt: "Интеграция бизнеса в Яндекс.Карты",
-      whatsappUrl: "https://wa.me/79407666644?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса.",
+// [removed chatbot-related line]
       phoneNumber: "+7 940 766-66-44"
     }
   ];
@@ -134,13 +134,13 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/demo/chatbot" data-testid="demo-chatbot-link">
+// [removed chatbot-related line]
               <Card className="card-hover cursor-pointer">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">🤖</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Чат-бот</h3>
+// [removed chatbot-related line]
                   <p className="text-sm text-gray-600">Попробуйте ИИ-помощника</p>
                 </CardContent>
               </Card>
@@ -213,7 +213,7 @@ export default function Home() {
       <section id="contact" className="py-20 bg-white" data-testid="cta-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6" data-testid="cta-title">
-            Готовы начать?
+// [removed chatbot-related line]
           </h2>
           <p className="text-xl text-gray-600 mb-8" data-testid="cta-description">
             Получите бесплатную консультацию по развитию вашего бизнеса

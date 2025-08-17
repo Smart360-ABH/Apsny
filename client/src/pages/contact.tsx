@@ -94,29 +94,29 @@ export default function Contact() {
                   <div className="flex items-start gap-4" data-testid="hours-info">
                     <Clock className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Режим работы</h4>
+// [removed chatbot-related line]
                       <div className="text-gray-600 space-y-1">
                         <p>Понедельник - Пятница: 9:00 - 18:00</p>
-                        <p>Суббота - Воскресенье: по договоренности</p>
+// [removed chatbot-related line]
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* WhatsApp Contacts */}
-              <Card data-testid="whatsapp-card">
+// [removed chatbot-related line]
+// [removed chatbot-related line]
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2" data-testid="whatsapp-title">
+// [removed chatbot-related line]
                     <MessageCircle className="w-6 h-6 text-accent" />
-                    WhatsApp
+// [removed chatbot-related line]
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <Button 
                     className="w-full bg-accent text-white hover:bg-accent/90 justify-start"
                     asChild
-                    data-testid="whatsapp-button-1"
+// [removed chatbot-related line]
                   >
                     <a 
                       href="https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса."
@@ -135,7 +135,7 @@ export default function Contact() {
                     variant="outline"
                     className="w-full border-accent text-accent hover:bg-accent hover:text-white justify-start"
                     asChild
-                    data-testid="whatsapp-button-2"
+// [removed chatbot-related line]
                   >
                     <a 
                       href="https://wa.me/79407666644?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса."
@@ -198,7 +198,7 @@ export default function Contact() {
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="font-semibold mb-2">WhatsApp чат</h3>
+// [removed chatbot-related line]
               <p className="text-sm text-gray-600">Удобное общение в любое время</p>
             </div>
             

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="text-2xl font-bold text-white mb-4" data-testid="footer-logo">Smart 360</div>
             <p className="text-gray-300 mb-4" data-testid="footer-description">
-              Умные решения для вашего бизнеса. Создаем сайты, чат-ботов, 
+// [removed chatbot-related line]
               интегрируем с Яндекс.Картами и предоставляем полный цикл цифровых услуг.
             </p>
             <div className="text-sm text-gray-400 space-y-1" data-testid="footer-contact-info">
@@ -39,7 +39,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4" data-testid="footer-services-title">Услуги</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><Link href="/services" data-testid="footer-service-websites"><a className="hover:text-white">Создание сайтов</a></Link></li>
-              <li><Link href="/services" data-testid="footer-service-chatbots"><a className="hover:text-white">Чат-боты и ИИ</a></Link></li>
+// [removed chatbot-related line]
               <li><Link href="/services" data-testid="footer-service-maps"><a className="hover:text-white">Яндекс.Карты</a></Link></li>
               <li><Link href="/services" data-testid="footer-service-tours"><a className="hover:text-white">Виртуальные туры</a></Link></li>
               <li><Link href="/services" data-testid="footer-service-instagram"><a className="hover:text-white">Реклама Instagram</a></Link></li>
@@ -56,10 +56,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors text-sm gap-2"
-                data-testid="footer-whatsapp"
+// [removed chatbot-related line]
               >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp
+// [removed chatbot-related line]
               </a>
               <a 
                 href="mailto:Service-abh@yandex.ru"

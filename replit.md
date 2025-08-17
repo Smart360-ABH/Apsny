@@ -2,9 +2,9 @@
 
 ## Overview
 
-Smart 360 is a comprehensive digital agency website offering business automation solutions. The platform features interactive demos for AI chatbots, 360° virtual tours, Yandex Maps integration, and commercial text generation. It includes a full content management system with lead tracking, admin authentication, and email notifications.
+// [removed chatbot-related line]
 
-The application serves as both a marketing showcase and functional demo platform, allowing potential clients to test AI-powered tools while providing the agency with lead management capabilities.
+// [removed chatbot-related line]
 
 ## User Preferences
 
@@ -36,13 +36,13 @@ The application uses a storage interface pattern with initial in-memory implemen
 - **Generated Texts**: AI-generated commercial content storage
 
 ### AI Integration
-- **OpenAI API**: Integrated for chatbot responses and commercial text generation
+// [removed chatbot-related line]
 - **Fallback System**: Mock responses when API is unavailable or unconfigured
-- **Context-Aware Chatbot**: Trained with Smart 360 service information and contact details
+// [removed chatbot-related line]
 - **Commercial Text Generator**: Customizable content creation based on topic, audience, and length
 
 ### Demo Functionality
-- **Interactive Chatbot**: Real-time AI assistant with company-specific knowledge
+// [removed chatbot-related line]
 - **Virtual Tour Viewer**: Upload and display 360° images with export capabilities
 - **Yandex Maps Integration**: Form-based business profile creation with JSON export
 - **Text Generation Tool**: AI-powered commercial content creation with customizable parameters
@@ -55,7 +55,7 @@ The application uses a storage interface pattern with initial in-memory implemen
 - **UI Framework**: Radix UI primitives, Tailwind CSS, Shadcn/ui components
 
 ### API Integrations
-- **OpenAI API**: GPT-4o model for chatbot and text generation
+// [removed chatbot-related line]
 - **Email Service**: SMTP configuration for automated notifications
 - **File Storage**: Local file system with configurable upload directory
 

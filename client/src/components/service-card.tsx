@@ -7,7 +7,7 @@ interface ServiceCardProps {
   description: string;
   image: string;
   imageAlt: string;
-  whatsappUrl: string;
+// [removed chatbot-related line]
   phoneNumber: string;
 }
 
@@ -16,7 +16,7 @@ export default function ServiceCard({
   description, 
   image, 
   imageAlt, 
-  whatsappUrl, 
+// [removed chatbot-related line]
   phoneNumber 
 }: ServiceCardProps) {
   return (
@@ -60,12 +60,12 @@ export default function ServiceCard({
           data-testid={`service-order-button-${title.toLowerCase().replace(/\s+/g, '-')}`}
         >
           <a 
-            href={whatsappUrl}
+// [removed chatbot-related line]
             target="_blank"
             rel="noopener noreferrer"
           >
             <MessageCircle className="w-4 h-4 mr-2" />
-            Заказать в WhatsApp
+// [removed chatbot-related line]
           </a>
         </Button>
       </CardContent>

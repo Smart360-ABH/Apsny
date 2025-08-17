@@ -10,9 +10,9 @@ export default function Portfolio() {
     {
       id: 1,
       title: "Интернет-магазин электроники",
-      description: "Полнофункциональный интернет-магазин с интеграцией платежей, каталогом товаров и чат-ботом для поддержки клиентов",
+// [removed chatbot-related line]
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      tags: ["React", "Node.js", "ChatBot", "Payments"],
+// [removed chatbot-related line]
       category: "E-commerce",
       year: "2024"
     },
@@ -37,7 +37,7 @@ export default function Portfolio() {
     {
       id: 4,
       title: "Салон красоты \"Элегант\"",
-      description: "Стильный сайт салона красоты с галереей работ, онлайн-записью, виртуальным туром и рекламными кампаниями в Instagram",
+// [removed chatbot-related line]
       image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
       tags: ["Beauty", "Instagram Ads", "Virtual Tour", "Gallery"],
       category: "Красота",
@@ -55,9 +55,9 @@ export default function Portfolio() {
     {
       id: 6,
       title: "Стоматологическая клиника",
-      description: "Современный сайт стоматологии с 3D-туром кабинетов, системой записи к врачам и чат-ботом для первичной консультации",
+// [removed chatbot-related line]
       image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      tags: ["Dental", "3D Tour", "ChatBot", "Booking"],
+// [removed chatbot-related line]
       category: "Медицина",
       year: "2024"
     }
@@ -73,7 +73,7 @@ export default function Portfolio() {
       <section className="hero-gradient text-white py-20" data-testid="portfolio-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6" data-testid="portfolio-title">
-            Наши работы
+// [removed chatbot-related line]
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto" data-testid="portfolio-description">
             Примеры успешных проектов Smart 360. От простых лендингов до сложных 
@@ -183,7 +183,7 @@ export default function Portfolio() {
               { name: "MongoDB", icon: "🍃" },
               { name: "Docker", icon: "🐳" },
               { name: "AWS", icon: "☁️" },
-              { name: "OpenAI", icon: "🤖" }
+// [removed chatbot-related line]
             ].map((tech, index) => (
               <div 
                 key={index}
@@ -218,14 +218,14 @@ export default function Portfolio() {
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
               asChild
-              data-testid="cta-whatsapp"
+// [removed chatbot-related line]
             >
               <a 
                 href="https://wa.me/79409435555?text=Здравствуйте,%20хочу%20обсудить%20проект%20с%20Smart%20360"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp консультация
+// [removed chatbot-related line]
               </a>
             </Button>
           </div>
