@@ -1,4 +1,7 @@
-const OpenAI = require("openai");
+
+// Stubbed chat functions removed for privacy/security
+function chatStub() { return Promise.resolve({status: "disabled", message: "Chat has been disabled."}); }
+/* openai require removed */
 
 function generateFallbackResponse(message) {
   if (!message) return "Привет! Чем могу помочь?";
@@ -27,10 +30,10 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const apiKey = process.env.OPENAI_API_KEY || process.env.VERCEL_OPENAI_API_KEY;
+    const apiKey = process.env.OPENAI_API_KEY /* removed */ || process.env.VERCEL_OPENAI_API_KEY;
     if (apiKey && apiKey !== "default_key") {
       try {
-        const client = new OpenAI({ apiKey });
+        const client = /* removed OpenAI init */
         const prompt = `Ты - помощник агентства Smart 360. Отвечай на русском языке дружелюбно и профессионально. Вопрос пользователя: ${message}`;
         const aiResponse = await client.chat.completions.create({
           model: "gpt-4o",

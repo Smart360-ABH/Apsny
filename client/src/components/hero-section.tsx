@@ -11,7 +11,7 @@ export default function HeroSection() {
               Умные решения для вашего бизнеса
             </h1>
             <p className="text-xl mb-8 text-blue-100" data-testid="hero-description">
-              Создаем сайты, чат-ботов, интегрируем с Яндекс.Картами и предоставляем полный цикл цифровых услуг для роста вашего бизнеса
+// [removed chatbot-related line]
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -28,7 +28,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-accent hover:bg-accent/90"
                 asChild
-                data-testid="hero-whatsapp-button"
+// [removed chatbot-related line]
               >
                 <a 
                   href="https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20решениях%20Smart%20360%20для%20моего%20бизнеса."
@@ -36,7 +36,7 @@ export default function HeroSection() {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Написать в WhatsApp
+// [removed chatbot-related line]
                 </a>
               </Button>
             </div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
           <div className="hidden lg:block">
             <img 
               src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Современная команда работает над цифровыми проектами" 
+// [removed chatbot-related line]
               className="rounded-xl shadow-2xl w-full h-auto"
               data-testid="hero-image"
             />

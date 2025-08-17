@@ -184,7 +184,7 @@ export default function TextGeneratorForm() {
                     data-testid="download-button"
                   >
                     <Download className="w-4 h-4 mr-2" />
-                    Скачать
+// [removed chatbot-related line]
                   </Button>
                 </div>
               )}
@@ -207,7 +207,7 @@ export default function TextGeneratorForm() {
             <h4 className="font-semibold mb-2">Пример: Средний</h4>
             <p className="text-sm text-gray-600 italic">
               "🎯 Революционное решение для вашего бизнеса! 
-              Комплексные цифровые услуги: сайты, чат-боты, реклама. 
+// [removed chatbot-related line]
               Увеличиваем прибыль на 30-50%. Гарантия результата..."
             </p>
           </div>

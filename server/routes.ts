@@ -6,7 +6,7 @@ import multer, { type Multer } from "multer";
 import path from "path";
 import fs from "fs";
 import nodemailer from "nodemailer";
-import OpenAI from "openai";
+// [removed chatbot-related line]
 
 // Extend Express Request interface for file uploads
 interface RequestWithFile extends Request {
@@ -33,9 +33,9 @@ const upload = multer({
   }
 });
 
-// Setup OpenAI
-const openai = new OpenAI({ 
-  apiKey: process.env.OPENAI_API_KEY || process.env.OPENAI_KEY || "default_key"
+// [removed chatbot-related line]
+// [removed chatbot-related line]
+// [removed chatbot-related line]
 });
 
 // Setup email transporter
@@ -250,8 +250,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       let generatedText = "";
       
-      // Try OpenAI if API key is available
-      if (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== "default_key") {
+// [removed chatbot-related line]
+// [removed chatbot-related line]
         try {
           const prompt = `Создай коммерческий текст на русском языке по следующим параметрам:
 Тема: ${topic}
@@ -260,16 +260,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
 Текст должен быть убедительным, профессиональным и подходящим для российского рынка. Используй современную лексику и избегай клише.`;
 
-          const response = await openai.chat.completions.create({
-            model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
+// [removed chatbot-related line]
+// [removed chatbot-related line]
             messages: [{ role: "user", content: prompt }],
             max_tokens: length === "Короткий (до 100 слов)" ? 150 : length === "Средний (100-300 слов)" ? 400 : 600,
             temperature: 0.7,
           });
 
           generatedText = response.choices[0].message.content || "";
-        } catch (openaiError) {
-          console.error("OpenAI error:", openaiError);
+// [removed chatbot-related line]
+// [removed chatbot-related line]
           // Fall back to mock response
           generatedText = generateMockText(topic, audience, length);
         }
@@ -294,8 +294,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Chatbot routes
-  app.post("/api/chatbot", async (req, res) => {
+// [removed chatbot-related line]
+// [removed chatbot-related line]
     try {
       const { message } = req.body;
       
@@ -305,12 +305,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       let response = "";
 
-      // Try OpenAI if API key is available
-      if (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== "default_key") {
+// [removed chatbot-related line]
+// [removed chatbot-related line]
         try {
           const prompt = `Ты - помощник агентства Smart 360, которое предоставляет услуги:
 - Создание сайтов (персональных и корпоративных)
-- Чат-боты и агенты ИИ
+// [removed chatbot-related line]
 - Интеграция в Яндекс.Карты
 - Виртуальные туры 360°
 - Реклама в Instagram
@@ -324,26 +324,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
 Отвечай на русском языке, будь дружелюбным и профессиональным. Вопрос пользователя: ${message}`;
 
-          const aiResponse = await openai.chat.completions.create({
-            model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
+// [removed chatbot-related line]
+// [removed chatbot-related line]
             messages: [{ role: "user", content: prompt }],
             max_tokens: 300,
             temperature: 0.7,
           });
 
           response = aiResponse.choices[0].message.content || "";
-        } catch (openaiError) {
-          console.error("OpenAI error:", openaiError);
-          response = getMockChatbotResponse(message);
+// [removed chatbot-related line]
+// [removed chatbot-related line]
+// [removed chatbot-related line]
         }
       } else {
-        response = getMockChatbotResponse(message);
+// [removed chatbot-related line]
       }
 
       res.json({ response });
     } catch (error) {
       res.status(500).json({ 
-        message: "Failed to process chatbot request", 
+// [removed chatbot-related line]
         error: error instanceof Error ? error.message : String(error)
       });
     }
@@ -382,7 +382,7 @@ Smart 360 поможет вам достичь новых высот! Наши �
 
     medium: `🎯 ${topic} - ваш путь к успеху!
 
-Для ${audience} мы предлагаем комплексные цифровые решения, которые работают на результат:
+// [removed chatbot-related line]
 
 ✅ Современные технологии
 ✅ Индивидуальный подход
@@ -403,7 +403,7 @@ Smart 360 - это команда профессионалов с многоле
 
 🎯 Что мы предлагаем:
 • Создание сайтов любой сложности
-• Умные чат-боты с искусственным интеллектом
+// [removed chatbot-related line]
 • Полная интеграция с Яндекс.Картами
 • Захватывающие виртуальные туры 360°
 • Эффективная реклама в Instagram
@@ -411,7 +411,7 @@ Smart 360 - это команда профессионалов с многоле
 • Детальные бизнес-планы для развития
 
 💡 Почему выбирают нас:
-- Более 5 лет успешной работы
+// [removed chatbot-related line]
 - 200+ довольных клиентов
 - Индивидуальный подход к каждому проекту
 - Современные технологии и инструменты
@@ -430,7 +430,7 @@ Smart 360 - это команда профессионалов с многоле
 📍 Офис: г. Сухум, ул. Эшба 166
 ☎️ Телефоны: +7 940 766-66-44, +7 940 943-55-55
 📧 Email: Service-abh@yandex.ru
-💬 WhatsApp: быстрая связь и консультации
+// [removed chatbot-related line]
 
 Smart 360 - умные решения для умного бизнеса! 🎯`
   };
@@ -440,15 +440,15 @@ Smart 360 - умные решения для умного бизнеса! 🎯`
   return templates.long;
 }
 
-function getMockChatbotResponse(message: string): string {
+// [removed chatbot-related line]
   const lowerMessage = message.toLowerCase();
   
   if (lowerMessage.includes("сайт") || lowerMessage.includes("веб")) {
     return "Smart 360 создаёт современные сайты для любого бизнеса! Мы делаем персональные и корпоративные сайты с адаптивным дизайном и SEO-оптимизацией. Хотите узнать больше? Звоните +7 940 766-66-44!";
   }
   
-  if (lowerMessage.includes("бот") || lowerMessage.includes("ии") || lowerMessage.includes("искусственный")) {
-    return "Наши чат-боты с ИИ увеличивают конверсию на 30-50%! Они работают 24/7, отвечают на вопросы клиентов и помогают с продажами. Телефон для консультации: +7 940 943-55-55.";
+// [removed chatbot-related line]
+// [removed chatbot-related line]
   }
   
   if (lowerMessage.includes("карт") || lowerMessage.includes("яндекс")) {
@@ -464,8 +464,8 @@ function getMockChatbotResponse(message: string): string {
   }
   
   if (lowerMessage.includes("контакт") || lowerMessage.includes("телефон") || lowerMessage.includes("адрес")) {
-    return "📍 Наш офис: г. Сухум, ул. Эшба 166\n📞 Телефоны: +7 940 766-66-44, +7 940 943-55-55\n📧 Email: Service-abh@yandex.ru\n💬 WhatsApp: wa.me/79409435555";
+// [removed chatbot-related line]
   }
   
-  return "Привет! Я помощник Smart 360 🤖 Мы создаём сайты, чат-ботов, интегрируем с Яндекс.Картами и предоставляем полный цикл цифровых услуг. Задавайте любые вопросы о наших услугах! Или звоните напрямую: +7 940 943-55-55";
+// [removed chatbot-related line]
 }

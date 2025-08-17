@@ -267,7 +267,7 @@ const ChartLegendContent = React.forwardRef<
     }
 >(
   (
-    { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },
+// [removed chatbot-related line]
     ref
   ) => {
     const { config } = useChart()

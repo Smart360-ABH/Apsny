@@ -25,7 +25,7 @@ export default function YandexMapsForm() {
     address: "г. Сухум, ул. Эшба 166",
     phone: "+7 940 943-55-55",
     workingHours: "Пн-Пт: 9:00-18:00",
-    category: "Веб-разработка",
+// [removed chatbot-related line]
     description: ""
   });
 
@@ -47,7 +47,7 @@ export default function YandexMapsForm() {
           longitude: 41.0201
         },
         features: [
-          "Профессиональная веб-разработка",
+// [removed chatbot-related line]
           "ИИ-решения для бизнеса",
           "Виртуальные туры 360°",
           "Интеграция с картами"
@@ -55,7 +55,7 @@ export default function YandexMapsForm() {
         contacts: {
           website: "https://smart360.ru",
           email: "Service-abh@yandex.ru",
-          whatsapp: "+79409435555"
+// [removed chatbot-related line]
         },
         yandexMapsConfig: {
           rubric: "Веб-студия",
@@ -80,7 +80,7 @@ export default function YandexMapsForm() {
         description: "Карточка организации создана. Теперь можно экспортировать JSON.",
       });
       
-      // Автоматически скачать JSON файл
+// [removed chatbot-related line]
       const blob = new Blob([data.jsonData], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -159,7 +159,7 @@ export default function YandexMapsForm() {
               </div>
 
               <div>
-                <Label htmlFor="workingHours">Часы работы</Label>
+// [removed chatbot-related line]
                 <Input
                   id="workingHours"
                   value={formData.workingHours}
@@ -179,7 +179,7 @@ export default function YandexMapsForm() {
                     <SelectValue placeholder="Выберите категорию" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Веб-разработка">Веб-разработка</SelectItem>
+// [removed chatbot-related line]
                     <SelectItem value="IT-услуги">IT-услуги</SelectItem>
                     <SelectItem value="Маркетинговое агентство">Маркетинговое агентство</SelectItem>
                     <SelectItem value="Консалтинг">Консалтинг</SelectItem>
@@ -230,7 +230,7 @@ export default function YandexMapsForm() {
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>✓ Точная привязка к координатам</li>
                 <li>✓ Полная контактная информация</li>
-                <li>✓ Часы работы и описание</li>
+// [removed chatbot-related line]
                 <li>✓ Категория деятельности</li>
                 <li>✓ Настройка отзывов</li>
                 <li>✓ SEO-оптимизация карточки</li>

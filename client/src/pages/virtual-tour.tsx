@@ -134,14 +134,14 @@ export default function VirtualTour() {
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
               asChild
-              data-testid="cta-whatsapp"
+// [removed chatbot-related line]
             >
               <a 
                 href="https://wa.me/79409435555?text=Здравствуйте,%20хочу%20узнать%20о%20виртуальных%20турах%20Smart%20360"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp консультация
+// [removed chatbot-related line]
               </a>
             </Button>
           </div>

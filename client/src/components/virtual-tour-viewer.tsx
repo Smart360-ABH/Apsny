@@ -300,7 +300,7 @@ export default function VirtualTourViewer() {
                       data-testid={`download-tour-${tour.id}`}
                     >
                       <Download className="w-4 h-4 mr-1" />
-                      Скачать
+// [removed chatbot-related line]
                     </Button>
                     <Button 
                       size="sm" 

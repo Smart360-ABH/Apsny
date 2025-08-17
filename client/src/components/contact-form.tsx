@@ -140,7 +140,7 @@ export default function ContactForm() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Создание сайта">Создание сайта</SelectItem>
-                <SelectItem value="Чат-бот / ИИ-агент">Чат-бот / ИИ-агент</SelectItem>
+// [removed chatbot-related line]
                 <SelectItem value="Яндекс.Карты">Яндекс.Карты</SelectItem>
                 <SelectItem value="Виртуальный тур">Виртуальный тур</SelectItem>
                 <SelectItem value="Реклама в Instagram">Реклама в Instagram</SelectItem>
